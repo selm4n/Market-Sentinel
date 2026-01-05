@@ -52,7 +52,8 @@ This project is written and tested primarily for:
 - Internet connection
 - microSD card with Raspberry Pi OS installed
 
-### Software
+## 🧱 Software Setup
+
 Make sure your system is up to date:
 
 ```bash
@@ -70,7 +71,7 @@ Go to a directory where you keep your projects:
 bash
 Copy code
 cd ~
-Clone the repo (replace with your actual GitHub repo URL):
+Clone the repository (replace with your actual GitHub repo URL):
 
 bash
 Copy code
@@ -112,57 +113,15 @@ Copy code
 Local URL: http://localhost:8501
 Network URL: http://192.168.1.xxx:8501
 🌐 Access from Another Device (Optional)
-If your Raspberry Pi is on the same network:
-
-Open a browser on your laptop or phone
-
-Go to:
+If your Raspberry Pi is on the same network, open a browser and go to:
 
 cpp
 Copy code
 http://RASPBERRY_PI_IP:8501
-This makes it perfect for:
+Perfect for:
 
 Wall dashboards
 
 Old tablets
 
 Always-on monitors
-
-⚙️ Configuration
-Inside the script:
-
-python
-Copy code
-SYMBOLS = ["BTC-USD", "ETH-USD", "SOL-USD", "AAPL", "TSLA"]
-REFRESH_RATE = 60
-Add / Remove Symbols
-Crypto: use -USD (e.g. AVAX-USD)
-
-Stocks: standard tickers (e.g. MSFT, NVDA)
-
-Refresh Rate
-Change REFRESH_RATE to control update frequency (in seconds).
-
-⚠️ Notes & Limitations
-Yahoo Finance may rate-limit excessive requests
-
-Short refresh intervals may cause temporary errors
-
-This app is meant for monitoring, not trading
-
-📌 Why Raspberry Pi?
-Low power consumption
-
-Silent
-
-Perfect for always-on dashboards
-
-Great excuse to keep a Pi doing something useful
-
-🧠 Final Note
-These scripts are part of my ongoing learning process.
-Some things may be over-engineered, some under-engineered — that’s intentional.
-
-If you spot a mistake, tell me.
-If you have a better idea, even better.
