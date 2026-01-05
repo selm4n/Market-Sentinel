@@ -1,127 +1,170 @@
-# 📡 Market Sentinel  
+# 📡 Market Sentinel
 ### Live Crypto & Stock Dashboard (Raspberry Pi)
 
-This project is a lightweight **live market dashboard** built with **Streamlit**, designed to run smoothly on a **Raspberry Pi**.
+Personal notes & experiments from my IT journey since 2019.
 
-It tracks selected **cryptocurrencies and stocks** in near real-time using Yahoo Finance data and displays price changes in a clean, readable dashboard format.
+This project is a lightweight live market dashboard built with Streamlit, designed to run smoothly on a Raspberry Pi.
+It tracks selected cryptocurrencies and stocks using Yahoo Finance data and displays them in a clean, always-on dashboard.
 
-This repo is part of my personal IT journey notes and small experiments.  
-I’ve been building things like this since 2019 to understand systems by actually running them.
-
-If you notice something wrong or something that could be done better, feel free to reach out or open an issue.
+If you notice something wrong or have a better way to do it, feel free to reach out or open an issue.
 
 ---
 
 ## ✅ What this app does
 
-- Tracks **crypto & stock prices** (BTC, ETH, SOL, AAPL, TSLA by default)
-- Pulls live data from **Yahoo Finance**
-- Calculates **daily percentage change**
-- Displays everything in a **dark-themed Streamlit dashboard**
-- Auto-refreshes every **60 seconds**
-- Designed to run **24/7 on Raspberry Pi**
+- Tracks crypto and stock prices (BTC, ETH, SOL, AAPL, TSLA by default)
+- Pulls live data from Yahoo Finance
+- Calculates daily percentage change
+- Dark-themed Streamlit dashboard
+- Auto-refreshes every 60 seconds
+- Designed to run 24/7 on Raspberry Pi
 
 ---
 
 ## 🧰 Tech Stack
 
-- **Python 3**
-- **Streamlit** – UI / dashboard
-- **yfinance** – market data
-- **pandas** – data handling
-- **plotly** – charting support (future-ready)
+- Python 3
+- Streamlit
+- yfinance
+- pandas
+- plotly
 
 ---
 
 ## 🖥️ Target Environment
 
-This project is written and tested primarily for:
-
-- **Raspberry Pi 4 / 5**
-- **Raspberry Pi OS (64-bit recommended)**
+- Raspberry Pi 4 / 5
+- Raspberry Pi OS (64-bit recommended)
 - Linux terminal usage
 
-> It will also run on macOS or Linux PCs, but Raspberry Pi is the intended environment.
+This app may run on other platforms, but Raspberry Pi is the primary target.
 
 ---
 
-## 🧱 Prerequisites
-
-### Hardware
-- Raspberry Pi (4 or newer recommended)
-- Internet connection
-- microSD card with Raspberry Pi OS installed
-
 ## 🧱 Software Setup
 
-Make sure your system is up to date:
+Update the system:
 
 ```bash
 sudo apt update && sudo apt upgrade -y
+```
+
 Check Python version:
 
-bash
-Copy code
+```bash
 python3 --version
-Python 3.9+ is recommended.
 ```
-📥 Clone the Repository
-Go to a directory where you keep your projects:
+
+Python 3.9+ is recommended.
+
+---
+
+## 📥 Clone the Repository
+
+Go to your home directory:
 
 ```bash
-Copy code
 cd ~
-Clone the repository (replace with your actual GitHub repo URL):
 ```
-bash
-Copy code
-git clone https://github.com/YOUR_GITHUB_USERNAME/market-sentinel.git
+
+Clone the repository:
+
+```bash
+git clone https://github.com/selm4n/market-sentinel.git
 cd market-sentinel
-📦 Install Required Packages
-It’s strongly recommended to use a virtual environment on Raspberry Pi.
+```
 
-1️⃣ Create a virtual environment
-bash
-Copy code
+---
+
+## 📦 Install Required Packages
+
+Create a virtual environment:
+
+```bash
 python3 -m venv venv
-2️⃣ Activate it
-bash
-Copy code
-source venv/bin/activate
-You should now see (venv) in your terminal.
+```
 
-3️⃣ Upgrade pip
-bash
-Copy code
+Activate it:
+
+```bash
+source venv/bin/activate
+```
+
+Upgrade pip:
+
+```bash
 pip install --upgrade pip
-4️⃣ Install dependencies
-bash
-Copy code
+```
+
+Install dependencies:
+
+```bash
 pip install streamlit yfinance pandas plotly
-▶️ Run the App
+```
+
+---
+
+## ▶️ Run the App
+
 From inside the project folder:
 
-bash
-Copy code
+```bash
 streamlit run app.py
-Replace app.py with the actual filename if different.
+```
+
+Replace `app.py` with the actual filename if different.
 
 After running the command, Streamlit will show something like:
 
-text
-Copy code
+```text
 Local URL: http://localhost:8501
 Network URL: http://192.168.1.xxx:8501
-🌐 Access from Another Device (Optional)
+```
+
+---
+
+## 🌐 Access from Another Device
+
 If your Raspberry Pi is on the same network, open a browser and go to:
 
-cpp
-Copy code
+```text
 http://RASPBERRY_PI_IP:8501
-Perfect for:
+```
 
-Wall dashboards
+Perfect for wall dashboards, old tablets, and always-on monitors.
 
-Old tablets
+---
 
-Always-on monitors
+## ⚙️ Configuration
+
+Inside the script:
+
+```python
+SYMBOLS = ["BTC-USD", "ETH-USD", "SOL-USD", "AAPL", "TSLA"]
+REFRESH_RATE = 60
+```
+
+- Crypto symbols use `-USD` (example: AVAX-USD)
+- Stocks use standard tickers (example: MSFT, NVDA)
+- Refresh rate is in seconds
+
+---
+
+## ⚠️ Notes & Limitations
+
+- Yahoo Finance may rate-limit excessive requests
+- Very short refresh intervals may cause temporary errors
+- This app is for monitoring, not trading
+
+---
+
+## 🧠 Why Raspberry Pi?
+
+- Low power consumption
+- Silent operation
+- Perfect for always-on dashboards
+- Great excuse to keep a Pi doing something useful
+
+---
+
+📍 Built as part of my Field Notes on IT
