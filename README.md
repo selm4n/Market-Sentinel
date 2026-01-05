@@ -64,15 +64,15 @@ bash
 Copy code
 python3 --version
 Python 3.9+ is recommended.
-
+```
 📥 Clone the Repository
 Go to a directory where you keep your projects:
 
-bash
+```bash
 Copy code
 cd ~
 Clone the repository (replace with your actual GitHub repo URL):
-
+```
 bash
 Copy code
 git clone https://github.com/YOUR_GITHUB_USERNAME/market-sentinel.git
